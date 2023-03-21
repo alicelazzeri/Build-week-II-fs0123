@@ -1,0 +1,97 @@
+body {
+  font-family: "Circular";
+}
+
+.general-container {
+  background-image: linear-gradient(top to bottom, rgba(209, 181, 76, 1), rgba(16, 16, 16, 1));
+  margin-top: 100px;
+  margin-left: 300px;
+}
+
+nav {
+  height: 70px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #101010;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+#logo {
+  fill: white;
+  width: 180px;
+  margin-bottom: 1.5rem;
+}
+.sidebar-icon {
+  fill: rgb(199, 199, 199);
+  transition: fill 0.3s ease-in;
+}
+.sidebar-icon:hover {
+  fill: white;
+  cursor: pointer;
+}
+.add {
+  fill: #101010;
+}
+
+.add-bg {
+  background-color: lightgrey;
+  border-radius: 2px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  padding: 0.3rem;
+}
+
+.heart-bg {
+  background: linear-gradient(135deg, #450af5, #c4efd9);
+  border-radius: 2px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  padding: 0.3rem;
+}
+
+#install {
+  margin-top: 12rem;
+}
+
+.sidebar-par {
+  width: 200px;
+}
+
+hr {
+  width: 230px;
+}
+
+.sidebar-link {
+  color: rgb(199, 199, 199);
+  transition: color 0.3s ease-in;
+}
+
+.sidebar-link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.music-pic {
+  width: 200px;
+  box-shadow: 5px 5px 20px 0px #000000;
+}
+
+#icon {
+  width: 20px;
+  border-radius: 10px;
+}
+
+#description p,
+#description h1 {
+  letter-spacing: -1px;
+}
