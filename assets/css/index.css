@@ -1,0 +1,187 @@
+body {
+  font-family: "Circular";
+  background-color: #121212;
+}
+
+nav {
+  height: 70px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #101010;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+#logo {
+  fill: white;
+  width: 180px;
+  margin-bottom: 1.5rem;
+}
+.sidebar-icon {
+  fill: rgb(199, 199, 199);
+  transition: fill 0.3s ease-in;
+}
+.sidebar-icon:hover {
+  fill: white;
+  cursor: pointer;
+}
+.add {
+  fill: #101010;
+}
+
+.add-bg {
+  background-color: lightgrey;
+  border-radius: 2px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  padding: 0.3rem;
+}
+
+.heart-bg {
+  background: linear-gradient(135deg, #450af5, #c4efd9);
+  border-radius: 2px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  padding: 0.3rem;
+}
+
+#install {
+  margin-top: 12rem;
+}
+
+.sidebar-par {
+  width: 200px;
+}
+
+hr {
+  width: 230px;
+}
+
+.sidebar-link {
+  color: rgb(199, 199, 199);
+  transition: color 0.3s ease-in;
+}
+
+.sidebar-link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.music-pic {
+  width: 200px;
+  box-shadow: 5px 5px 20px 0px #000000;
+}
+
+#icon {
+  width: 20px;
+  border-radius: 10px;
+}
+
+#description p,
+#description h1 {
+  letter-spacing: -1px;
+}
+
+#navBar {
+  align-items: center;
+  padding-inline: 2rem;
+  background-color: #121212;
+  display: flex;
+  color: aliceblue;
+  padding-block: 10px;
+  justify-content: space-between;
+  position: sticky;
+  z-index: 0;
+  margin-right: 220px;
+  width: 100%;
+}
+
+#navL i {
+  font-size: 2rem;
+  margin-inline: 0.5rem;
+  cursor: pointer;
+  flex-wrap: nowrap;
+}
+
+#navUpgrade {
+  font-weight: 600;
+  border: 1px solid grey;
+  padding: 5px;
+  padding-inline: 15px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+#navR {
+  display: flex;
+  align-items: center;
+  margin-right: 20rem;
+}
+
+#navR img {
+  width: 30px;
+  border-radius: 100%;
+}
+
+#profile {
+  padding: 4px;
+  display: flex;
+  background-color: black;
+  border-radius: 20px;
+  align-items: center;
+}
+
+#name {
+  padding-inline: 7px;
+}
+
+li::marker {
+  display: none;
+}
+
+.padd {
+  margin-right: 3px;
+}
+
+#pointerNone {
+  color: rgb(167, 167, 167);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  #nav {
+    display: none;
+  }
+}
+@media (max-width: 580px) {
+  #navUpgrade {
+    display: none;
+  }
+}
+@media (max-width: 418px) {
+  #lMenu {
+    display: none;
+  }
+  #main {
+    margin-left: 0px;
+  }
+  #navBar {
+    justify-content: space-between;
+    padding-inline: 10px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 419px) {
+  #pointerNone {
+    display: none;
+  }
+}
