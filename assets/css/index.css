@@ -156,6 +156,15 @@ li::marker {
   font-size: 1.5rem;
 }
 
+.dropdown-item {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(167, 167, 167);
+  color: #121212;
+}
+
 @media (max-width: 768px) {
   #nav {
     display: none;

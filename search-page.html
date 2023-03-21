@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Spotify &#8211; Gioventù brucata - Album by Pinguini Tattici Nucleari" />
-    <title>Spotify &#8211; Gioventù brucata - Album by Pinguini Tattici Nucleari</title>
+    <meta name="description" content="Spotify &#8211; Ricerca" />
+    <title>Spotify &#8211; Ricerca</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -85,9 +85,9 @@
           </div>
         </div>
       </div>
-      <div id="aside" class="d-flex flex-column flex-shrink-0 p-3 text-white">
+      <div id="aside" class="d-flex flex-column flex-shrink-0 p-3 text-white mb-5">
         <div class="container-fluid">
-          <div class="d-flex align-items-center justify-content-between mt-2 ps-3">
+          <div class="d-flex align-items-center justify-content-between ps-3" style="margin-top: 4rem">
             <p>Attività amici</p>
             <div class="d-flex align-items-center ms-4 mb-3">
               <i class="aside-icons bi bi-person-plus"></i>
@@ -98,9 +98,13 @@
             <div class="d-flex align-items-center">
               <img src="assets/imgs/search/image-13.jpeg" alt="Profile-pic" style="width: 40px; border-radius: 20px" />
               <li class="nav-item w-100">
-                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
-                  >Alice Lazzeri</a
-                >
+                <div class="d-flex justify-content-between align-items-end">
+                  <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                    >Alice Lazzeri</a
+                  >
+                  <p style="font-size: 0.7rem" class="px-3 mb-2">4 ore</p>
+                </div>
+
                 <p style="font-size: 0.7rem" class="px-3">In Camera &#183; Yumi Zouma</p>
                 <p style="font-size: 0.7rem" class="px-3"><i class="bi bi-record-circle me-1"></i> EP III</p>
               </li>
@@ -109,9 +113,13 @@
             <div class="d-flex align-items-center">
               <img src="assets/imgs/search/image-14.jpg" alt="Profile-pic" style="width: 40px; border-radius: 20px" />
               <li class="nav-item w-100">
-                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
-                  >Marianna Bagno</a
-                >
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                    >Marianna Bagno</a
+                  >
+                  <p style="font-size: 0.7rem" class="mb-1">4 ore</p>
+                </div>
+
                 <p style="font-size: 0.7rem" class="px-3">Aimed to Kill &#183; Jade LeMac</p>
                 <p style="font-size: 0.7rem" class="px-3"><i class="bi bi-record-circle me-1"></i> Aimed to Kill</p>
               </li>
@@ -120,9 +128,13 @@
             <div class="d-flex align-items-center">
               <img src="assets/imgs/search/image-15.jpg" alt="Profile-pic" style="width: 40px; border-radius: 20px" j />
               <li class="nav-item w-100">
-                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
-                  >Andrea Caforio</a
-                >
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                    >Andrea Caforio</a
+                  >
+                  <p style="font-size: 0.7rem" class="mb-1">4 ore</p>
+                </div>
+
                 <p style="font-size: 0.7rem" class="px-3">New Kings &#183; Sleeping Wolf</p>
                 <p style="font-size: 0.7rem" class="px-3">
                   <i class="bi bi-music-note-beamed me-1"></i> Twint Badass Mood
@@ -133,7 +145,6 @@
         </div>
       </div>
 
-      
     <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white" style="width: 280px">
       <div class="container-fluid">
         <a href="#" class="d-flex align-items-center mb-3 text-white text-decoration-none">
@@ -252,6 +263,22 @@
           <a href="#" class="nav-link mx-3 sidebar-link" aria-current="page">Installa app</a>
         </div>
       </div>
+    </div>
+
+    <div id="results-container">
+      <img class="py-1 mb-2" src="assets/imgs/main/image-14.jpg" alt="Artist" width="100px" style="border-radius: 50px;">
+      <h3 class="my-2">Nome artista</h3>
+      <div class="d-flex align-items-center justify-content-between" style="position: relative;">
+        <div>
+          <span class="badge rounded-pill text-bg-dark fs-6 mt-3 py-2">Artista</span>
+        </div>
+        
+          <div id="play" style="position: relative">
+            <svg style="position: absolute; right: 12px; bottom: 13px;" role="img" height="28" width="28" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path></svg>
+          </div>
+        
+      </div>
+      
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

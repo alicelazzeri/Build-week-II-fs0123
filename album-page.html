@@ -25,7 +25,10 @@
     <div class="general-container container-fluid">
       <div id="navBar">
         <div id="pointerNone"><i class="bi bi-three-dots"></i></div>
-        <div id="navL"><i class="bi bi-arrow-left-circle-fill"></i><i class="bi bi-arrow-right-circle-fill"></i></div>
+        <div id="navL">
+          <a href="index.html"><i class="bi bi-arrow-left-circle-fill"></i></a>
+          <a href="artist-page.html"><i class="bi bi-arrow-right-circle-fill"></i></a>
+        </div>
 
         <div id="navR">
           <div id="navUpgrade">Effettua l'upgrade</div>
@@ -45,7 +48,7 @@
                 aria-expanded="false"
                 >Nome utente</a
               >
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu bg bg-dark">
                 <li class="d-flex justify-space-between align-items-center">
                   <a class="dropdown-item" href="#">Account</a><i class="bi bi-box-arrow-up-right mr-2 padd"></i>
                 </li>
@@ -56,15 +59,15 @@
                 <li><a class="dropdown-item" href="#">Sessione privata</a></li>
                 <li><a class="dropdown-item" href="#">Impostazioni</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Esci</a></li>
+                <li><a class="dropdown-item" href="login-page.html">Esci</a></li>
               </ul>
             </li>
           </div>
         </div>
       </div>
-      <div id="aside" class="d-flex flex-column flex-shrink-0 p-3 text-white">
+      <div id="aside" class="d-flex flex-column flex-shrink-0 p-3 text-white mb-5">
         <div class="container-fluid">
-          <div class="d-flex align-items-center justify-content-between mt-2 ps-3">
+          <div class="d-flex align-items-center justify-content-between ps-3" style="margin-top: 4rem">
             <p>Attività amici</p>
             <div class="d-flex align-items-center ms-4 mb-3">
               <i class="aside-icons bi bi-person-plus"></i>
@@ -75,9 +78,13 @@
             <div class="d-flex align-items-center">
               <img src="assets/imgs/search/image-13.jpeg" alt="Profile-pic" style="width: 40px; border-radius: 20px" />
               <li class="nav-item w-100">
-                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
-                  >Alice Lazzeri</a
-                >
+                <div class="d-flex justify-content-between align-items-end">
+                  <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                    >Alice Lazzeri</a
+                  >
+                  <p style="font-size: 0.7rem" class="px-3 mb-2">4 ore</p>
+                </div>
+
                 <p style="font-size: 0.7rem" class="px-3">In Camera &#183; Yumi Zouma</p>
                 <p style="font-size: 0.7rem" class="px-3"><i class="bi bi-record-circle me-1"></i> EP III</p>
               </li>
@@ -86,9 +93,13 @@
             <div class="d-flex align-items-center">
               <img src="assets/imgs/search/image-14.jpg" alt="Profile-pic" style="width: 40px; border-radius: 20px" />
               <li class="nav-item w-100">
-                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
-                  >Marianna Bagno</a
-                >
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                    >Marianna Bagno</a
+                  >
+                  <p style="font-size: 0.7rem" class="mb-1">4 ore</p>
+                </div>
+
                 <p style="font-size: 0.7rem" class="px-3">Aimed to Kill &#183; Jade LeMac</p>
                 <p style="font-size: 0.7rem" class="px-3"><i class="bi bi-record-circle me-1"></i> Aimed to Kill</p>
               </li>
@@ -97,9 +108,13 @@
             <div class="d-flex align-items-center">
               <img src="assets/imgs/search/image-15.jpg" alt="Profile-pic" style="width: 40px; border-radius: 20px" j />
               <li class="nav-item w-100">
-                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
-                  >Andrea Caforio</a
-                >
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                    >Andrea Caforio</a
+                  >
+                  <p style="font-size: 0.7rem" class="mb-1">4 ore</p>
+                </div>
+
                 <p style="font-size: 0.7rem" class="px-3">New Kings &#183; Sleeping Wolf</p>
                 <p style="font-size: 0.7rem" class="px-3">
                   <i class="bi bi-music-note-beamed me-1"></i> Twint Badass Mood
@@ -165,7 +180,7 @@
                 d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
               ></path>
             </svg>
-            <a href="#" class="nav-link sidebar-link" aria-current="page">Cerca</a>
+            <a href="search-page.html" class="nav-link sidebar-link" aria-current="page">Cerca</a>
           </li>
           <li class="nav-item d-flex align-items-center">
             <svg
@@ -241,6 +256,39 @@
           <a href="#" class="nav-link mx-3 sidebar-link" aria-current="page">Installa app</a>
         </div>
       </div>
+    </div>
+
+    <div
+      id="music-player"
+      class="d-flex justify-content-between flex-wrap align-items-center bg-black bg-gradient border-top border-dark-subtle border-1 p-4"
+    >
+      <div class="d-flex align-items-center gap-3 col-md-4">
+        <a href="#"
+          ><img
+            class="rounded-circle border border-white border-1"
+            src="assets/images/logo.png"
+            width="40px"
+            alt="Logo"
+        /></a>
+        <p class="mb-0 fw-lighter" style="font-size: 0.8rem">
+          &#169; 2021
+          <span class="ms-2 text-secondary" style="font-family: 'Sansita Swashed', cursive; font-size: 1rem"
+            >Alice in Wondercraft</span
+          >
+        </p>
+      </div>
+      <ul class="nav col-md-4 d-flex justify-content-end align-items-center list-unstyled">
+        <li>
+          <a class="text-decoration-none" href="https://www.instagram.com/alice_in_wondercraft/" target="_blank"
+            ><i class="bi bi-instagram text-body-tertiary mx-2 social"></i
+          ></a>
+        </li>
+        <li>
+          <a class="text-decoration-none" href="https://www.pinterest.it/aliceinwondercraft_95/" target="_blank"
+            ><i class="bi bi-pinterest text-body-tertiary mx-2 social"></i
+          ></a>
+        </li>
+      </ul>
     </div>
 
     <script
