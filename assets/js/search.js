@@ -1,26 +1,23 @@
 const s = document.getElementById('search-input')
+const container = document.getElementById('results-container')
+container.classList.add('d-none')
 
-s.addEventListener('keyup',()=>{
+s.addEventListener('keyup', () => {
+    console.log(s.value);
     const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
     fetch(search)
-    .then(r=>r.json())
-    .then(artist=>{
-        const container = document.getElementById('results-container')
-        container.classList.remove('d-none')
-        const img = document.getElementById('artist')
-        const nomeArtista = document.getElementById('nome-artista')
+        .then(r => r.json())
+        .then(artist => {
+            container.classList.remove('d-none')
 
-        console.log(artist.data);
+            const img = document.getElementById('artist')
+            const nomeArtista = document.getElementById('nome-artista')
 
-        for(let i=0; i<artist.data.length;i++){
-            
-            img.src = artist.data[i].artist.picture_medium
-            nomeArtista.textContent = artist.data[i].artist.name
-
-            console.log(img.src);
+            for (let i = 0; i < artist.data.length; i++) {
+                img.src = artist.data[i].artist.picture
+                nomeArtista.textContent = artist.data[i].artist.name
+            }
         }
-        if(s.value === ''){
-            container.classList.add('d-none')}
-    }
-    )
-})
+        )
+}
+)
