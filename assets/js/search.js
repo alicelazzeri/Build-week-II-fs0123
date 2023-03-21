@@ -22,7 +22,6 @@ s.addEventListener('keyup', () => {
         .then(()=>{
             if(s.value === ''){
                 container.classList.add('d-none')
-
             }
         })
 }
