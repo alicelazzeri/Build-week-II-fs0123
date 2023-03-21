@@ -6,23 +6,43 @@ nav{
     transition: 2s;
 }
 
-/* div{
+.div{
     background-image: url('https://e-cdns-images.dzcdn.net/images/cover/8b8fc5d117f9357b79f0a0a410a170e8/1000x1000-000000-80-0-0.jpg');
     background-size: cover;
     height: 40vh;
     background-position: center;
-} */
+}
 
-button{
+nav button{
     border: none;
     border-radius: 50%;
     height: 37px;
     width: 42px;
     padding-top: 0;
+    background-color: rgba(0, 0, 0, 0.21);
+}
+
+.play-button{
+    height: 56px;
+    width: 56px;
+    border: none;
+    background-color: #20d565;
+}
+
+.play-button svg{
+    fill: black;
+}
+
+nav svg{
+    fill: white
 }
 
 .padding{
     padding-left: 32px;
     padding-right: 32px;
     padding-bottom: 24px;
+}
+
+.w-100{
+    width: 100%;
 }
