@@ -1,6 +1,5 @@
 const s = document.getElementById('search-input')
 const container = document.getElementById('results-container')
-container.classList.add('d-none')
 
     s.addEventListener('keyup',() => {
         const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
