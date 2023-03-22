@@ -16,16 +16,29 @@
 #results-container {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-right: 3rem;
-  padding-left: 3rem;
-  margin-top: 3rem;
-  margin-left: 45px;
-  width: 400px;
+  padding-right: 1rem;
+  padding-left: 1rem;
   height: 250px;
   color: white;
-  background-color: #373737e8;
+  background-color: #181818;
   border-radius: 10px;
   position: relative;
+}
+
+#buttons button{
+  background-color: #232323;
+  border-radius: 30px;
+}
+#buttons button:hover{
+  background-color: #2a2a2a;
+}
+#buttons button:focus{
+  background-color: white;
+  color: black!important;
+}
+
+#container{
+  width: 60%;
 }
 
 #play {
@@ -38,6 +51,15 @@
   bottom: 10px;
   right: 20px;
   opacity: 0
+}
+
+.brani:hover{
+  background-color: #282828;
+}
+
+.brani div img{
+  width: 50px;
+  padding: 10px
 }
 
 #play svg{
@@ -61,7 +83,7 @@
 }
 
 #results-container:hover {
-  background-color: #8c8a8ae8;
+  background-color: #282828;
   cursor: pointer;
 }
 
