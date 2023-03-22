@@ -17,22 +17,26 @@ const container = document.getElementById('container')
                     nomeArtista.textContent = artist.data[i].artist.name
                 }
 
-                const braniImg = document.querySelectorAll('.brani')
+                const album = document.querySelectorAll('.imgAlbum')
+                const nomeBrano = document.querySelectorAll('.nomeBrano')
+                const nomeArt = document.querySelectorAll('.nomeArtista')
+                const durata = document.querySelectorAll('.durata')
 
-                for(let j=0; j < braniImg.length; j++){
-                    const brani = braniImg[j]
+                for(let j=0; j < album.length; j++){
+                    const imgAlbum = album[j]
+                    const brano = nomeBrano[j]
+                    const artista = nomeArt[j]
+                    const dur = durata[j]
 
-                    const photo = artist.data[j]
-                    console.log(photo);
-
-                    const imgAlbum = document.createElement('img')
+                    const set = artist.data[j]
 
                     imgAlbum.setAttribute('height','50px')
                     imgAlbum.setAttribute('width','50px')
 
-                    imgAlbum.src = photo.album.cover
-
-                    brani.prepend(imgAlbum)
+                    imgAlbum.src = set.album.cover
+                    brano.innerText = set.album.title
+                    artista.innerText = set.artist.name
+                    dur.innerText = set.duration
                 }
 
                 
