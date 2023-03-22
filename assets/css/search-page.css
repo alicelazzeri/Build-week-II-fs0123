@@ -37,6 +37,13 @@
   color: black!important;
 }
 
+.overflow{
+  width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
 #container{
   width: 60%;
 }
