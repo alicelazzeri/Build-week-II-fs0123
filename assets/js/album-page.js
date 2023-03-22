@@ -25,13 +25,16 @@ try {
 
             const track = document.querySelectorAll('.track')
             const nomeArtista = document.querySelectorAll('.nome-artista')
+            const duration = document.querySelectorAll('.duration')
 
             for(let i=0; i<track.length; i++){
                 const titles = track[i]
                 const names = nomeArtista[i]
+                const time = duration[i]
 
                 titles.innerText = albumPage.tracks.data[i].title
                 names.innerText = albumPage.tracks.data[i].artist.name
+                time.innerText = albumPage.tracks.data[i].duration.toString().slice(0,1) + ':' + albumPage.tracks.data[i].duration.toString().slice(1,3)
             }
         })
 }
