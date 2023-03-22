@@ -229,6 +229,10 @@ li::marker {
   border: none;
 }
 
+#play-green2:hover{
+  transform: scale(1.1);
+}
+
 #favorites,
 #more,
 #small-heart,
