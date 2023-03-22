@@ -74,8 +74,11 @@ album.onclick = ()=>{
 
             card.classList.add('card','m-3','px-0','bg-dark')
             img.classList.add('card-img-top', 'p-2')
+            p.classList.add('p-2')
+            p.style.fontSize = '0.8rem'
 
             img.src = set.album.cover_medium
+            p.innerText = set.album.title
 
             card.append(cardBody,img,p)
             container.append(card)
