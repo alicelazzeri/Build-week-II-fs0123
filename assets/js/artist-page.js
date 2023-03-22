@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("btn-app");
 
   //diminuire il numero se si vuole che il cambio colore arrivi prima
-  const scrollChange = 430;
+  const scrollChange = 500;
 
   window.addEventListener("scroll", function () {
     scroll = window.scrollY;
