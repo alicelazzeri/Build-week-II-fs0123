@@ -89,6 +89,13 @@ album.onclick = ()=>{
 
             card.append(cardBody,img,pAlbum,pName)
             container.append(card)
+
+            console.log(set);
+            console.log(set.id);
+
+            card.onclick = ()=>{
+                location.assign(`./album-page.html?id=${set.album.id}`)
+            }
         }
 
     })

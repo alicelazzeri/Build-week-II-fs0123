@@ -37,6 +37,10 @@
   color: black!important;
 }
 
+#nome-album{
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.69)
+}
+
 .overflow{
   overflow: hidden;
   text-overflow: ellipsis;
