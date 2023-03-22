@@ -7,6 +7,12 @@ try {
         .then(r => r.json())
         .then(albumPage => {
             console.log(albumPage);
+            const bg = document.getElementById('bg')
+            const bgAlbum = albumPage.cover_xl
+            bg.style.backgroundImage = `url('${bgAlbum}')`
+            // const bg = albumPage.cover_xl
+            // const bgResp = document.body.style.backgroundImage = `url('${bg}')`
+
             const imgCover = document.querySelector('.music-pic')
             const album = document.getElementById('nome-album')
             const albumNav = document.getElementById('nome-album-nav')
@@ -36,6 +42,7 @@ try {
                 names.innerText = albumPage.tracks.data[i].artist.name
                 time.innerText = albumPage.tracks.data[i].duration.toString().slice(0,1) + ':' + albumPage.tracks.data[i].duration.toString().slice(1,3)
             }
+            body.append(bgResp)
         })
 }
 catch (err) {

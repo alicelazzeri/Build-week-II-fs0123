@@ -4,6 +4,14 @@ body {
   overflow-y: auto;
 }
 
+#bg{
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  position: absolute;
+  filter: blur(200px);
+}
+
 .general-container {
   background-image: linear-gradient(top to bottom, rgba(209, 181, 76, 1), rgba(16, 16, 16, 1));
   margin-left: 300px;
@@ -198,7 +206,7 @@ li::marker {
   fill: white;
 }
 .album {
-  background-image: linear-gradient(rgba(209, 181, 76, 1), #121212);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.00)1%, #121212 100%);
 }
 .play-buttons {
   margin-left: 3rem;
