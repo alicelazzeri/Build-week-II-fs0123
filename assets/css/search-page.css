@@ -37,8 +37,21 @@
   color: black!important;
 }
 
+#nome-album-nav{
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.69);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
+}
+
 #nome-album{
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.69)
+  font-size: 4rem; 
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.69);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 700px;
 }
 
 .overflow{
