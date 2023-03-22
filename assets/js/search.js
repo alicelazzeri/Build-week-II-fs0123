@@ -33,10 +33,13 @@ const container = document.getElementById('container')
                     imgAlbum.setAttribute('height','50px')
                     imgAlbum.setAttribute('width','50px')
 
+                    let colons = set.duration.toString()
+                    let a = colons.slice(0,1) + ':' + colons.slice(1)
+                    
                     imgAlbum.src = set.album.cover
                     brano.innerText = set.album.title
                     artista.innerText = set.artist.name
-                    dur.innerText = set.duration
+                    dur.innerText = a
                 }
 
                 
