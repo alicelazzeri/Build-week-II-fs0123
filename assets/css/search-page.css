@@ -56,16 +56,36 @@
 .brano:hover{
   background-color: #282828;
 }
+.brano:hover svg{
+  opacity: 1;
+}
+
+.nomeBrano:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.nomeArtista:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .brani div img{
   width: 50px;
   padding: 10px
+}
+.brani svg{
+  opacity: 0;
+  fill: white;
+  left: 25px;
 }
 
 #play svg{
   position: absolute;
   right: 12px;
   bottom: 13px;
+}
+#play:hover{
+  transform: scale(1.1);
 }
 
 #results-container:hover #play{
