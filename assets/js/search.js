@@ -1,5 +1,7 @@
 const s = document.getElementById('search-input')
+const btnTutto = document.getElementById('tutto')
 const container = document.getElementById('container')
+
 
     s.addEventListener('keyup',() => {
         const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
@@ -7,7 +9,7 @@ const container = document.getElementById('container')
             .then(r => r.json())
             .then(artist => {
                 container.classList.remove('d-none')
-    
+                btnTutto.focus()
                 const img = document.getElementById('artist')
                 const nomeArtista = document.getElementById('nome-artista')
     
@@ -41,9 +43,6 @@ const container = document.getElementById('container')
                     artista.innerText = set.artist.name
                     dur.innerText = a
                 }
-
-                
-    
             }
             )
             .then(()=>{
