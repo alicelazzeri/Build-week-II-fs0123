@@ -29,17 +29,22 @@ try {
             imgCover.src = albumPage.cover
             icon.src = albumPage.artist.picture_small
 
-            const track = document.querySelectorAll('.track')
+            const track = document.querySelectorAll('.track');
             const nomeArtista = document.querySelectorAll('.nome-artista')
             const duration = document.querySelectorAll('.duration')
+            const popular = document.getElementById('popular-artist')
+            
 
             for(let i=0; i<track.length; i++){
                 const titles = track[i]
                 const names = nomeArtista[i]
                 const time = duration[i]
-
+                
                 titles.innerText = albumPage.tracks.data[i].title
+
+                popular.innerText = albumPage.tracks.data[i].artist.name
                 names.innerText = albumPage.tracks.data[i].artist.name
+
                 time.innerText = albumPage.tracks.data[i].duration.toString().slice(0,1) + ':' + albumPage.tracks.data[i].duration.toString().slice(1,3)
             }
             body.append(bgResp)
