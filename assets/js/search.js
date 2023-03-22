@@ -1,6 +1,7 @@
 const s = document.getElementById('search-input')
 const btnTutto = document.getElementById('tutto')
 const container = document.getElementById('container')
+const btnAlbum = document.getElementById('album')
 
 
     s.addEventListener('keyup',() => {
@@ -51,3 +52,34 @@ const container = document.getElementById('container')
             })
     }
     )
+
+album.onclick = ()=>{
+    while (container.children.length > 1) {
+        container.removeChild(container.lastChild);
+    }
+    const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
+    fetch(search)
+    .then(r=>r.json())
+    .then(albm=>{
+        console.log(albm);
+        for(let i = 0;i<albm.data.length ;i++){
+            const card = document.createElement('div')
+            const cardBody = document.createElement('div')
+            const img = document.createElement('img')
+            const p = document.createElement('p')
+            const set = albm.data[i]
+
+            card.style.width = '130px'
+            img.style.height = '130px'
+
+            card.classList.add('card','m-3','px-0','bg-dark')
+            img.classList.add('card-img-top', 'p-2')
+
+            img.src = set.album.cover_medium
+
+            card.append(cardBody,img,p)
+            container.append(card)
+        }
+
+    })
+}
