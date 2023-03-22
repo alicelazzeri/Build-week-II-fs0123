@@ -66,21 +66,28 @@ album.onclick = ()=>{
             const card = document.createElement('div')
             const cardBody = document.createElement('div')
             const img = document.createElement('img')
-            const p = document.createElement('p')
+            const pAlbum = document.createElement('p')
+            const pName = document.createElement('p')
             const set = albm.data[i]
 
+            const p = [pAlbum,pName]
+            for(ps of p){
+                ps.classList.add('px-2','overflow','mb-1','py-0')
+            }
+            
             card.style.width = '130px'
             img.style.height = '130px'
 
             card.classList.add('card','m-3','px-0','bg-dark')
             img.classList.add('card-img-top', 'p-2')
-            p.classList.add('p-2','overflow')
-            p.style.fontSize = '0.8rem'
+            pAlbum.style.fontSize = '0.8rem'
+            pName.style.fontSize = '0.7rem'
 
             img.src = set.album.cover_medium
-            p.innerText = set.album.title
+            pAlbum.innerText = set.album.title
+            pName.innerText = set.artist.name
 
-            card.append(cardBody,img,p)
+            card.append(cardBody,img,pAlbum,pName)
             container.append(card)
         }
 
