@@ -12,9 +12,30 @@ const container = document.getElementById('container')
                 const nomeArtista = document.getElementById('nome-artista')
     
                 for (let i = 0; i < artist.data.length; i++) {
+
                     img.src = artist.data[i].artist.picture
                     nomeArtista.textContent = artist.data[i].artist.name
                 }
+
+                const braniImg = document.querySelectorAll('.brani')
+
+                for(let j=0; j < braniImg.length; j++){
+                    const brani = braniImg[j]
+
+                    const photo = artist.data[j]
+                    console.log(photo);
+
+                    const imgAlbum = document.createElement('img')
+
+                    imgAlbum.setAttribute('height','50px')
+                    imgAlbum.setAttribute('width','50px')
+
+                    imgAlbum.src = photo.album.cover
+
+                    brani.prepend(imgAlbum)
+                }
+
+                
     
             }
             )
