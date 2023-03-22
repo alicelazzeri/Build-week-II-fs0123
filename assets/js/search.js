@@ -9,7 +9,6 @@ const container = document.getElementById('container')
             .then(r => r.json())
             .then(artist => {
                 container.classList.remove('d-none')
-                btnTutto.focus()
                 const img = document.getElementById('artist')
                 const nomeArtista = document.getElementById('nome-artista')
     
