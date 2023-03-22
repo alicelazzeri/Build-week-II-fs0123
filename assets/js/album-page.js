@@ -22,6 +22,17 @@ try {
 
             imgCover.src = albumPage.cover
             icon.src = albumPage.artist.picture_small
+
+            const track = document.querySelectorAll('.track')
+            const nomeArtista = document.querySelectorAll('.nome-artista')
+
+            for(let i=0; i<track.length; i++){
+                const titles = track[i]
+                const names = nomeArtista[i]
+
+                titles.innerText = albumPage.tracks.data[i].title
+                names.innerText = albumPage.tracks.data[i].artist.name
+            }
         })
 }
 catch (err) {
