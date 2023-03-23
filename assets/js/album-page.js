@@ -23,6 +23,7 @@ try {
             for (albums of a) {
                 albums.innerText = albumPage.title
             }
+
             name.innerHTML = `${albumPage.artist.name} &bull; <span class="fw-light"> ${albumPage.release_date.slice(0, 4)}</span> &bull;
             <span class="fw-light"> ${albumPage.nb_tracks} brani, </span><span class="fw-light opacity-75">${albumPage.duration.toString().slice(0,2)} min ${albumPage.duration.toString().slice(2,4)} sec.</span>`
 
@@ -65,7 +66,12 @@ try {
                 if(dur.toString().length <= 2 && dur.toString().slice(0,2) <= 59){
                     dur = '0' + albumPage.tracks.data[i].duration
                 }
-                
+
+                const ps = [nameTrack,artist,divNumber,duration]
+                for(p of ps){
+                    p.classList.add('text-white')
+                }
+
                 console.log(dur.toString().slice(0,1) + ':' + dur.toString().slice(1,3));
                 divNumber.textContent = i +1
                 nameTrack.textContent = albumPage.tracks.data[i].title
