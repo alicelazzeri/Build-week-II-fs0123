@@ -29,25 +29,74 @@ try {
             imgCover.src = albumPage.cover
             icon.src = albumPage.artist.picture_small
 
-            const track = document.querySelectorAll('.track');
-            const nomeArtista = document.querySelectorAll('.nome-artista')
-            const duration = document.querySelectorAll('.duration')
-            const popular = document.getElementById('popular-artist')
-            
+            const songContainer = document.getElementById('song-container')
 
-            for(let i=0; i<track.length; i++){
-                const titles = track[i]
-                const names = nomeArtista[i]
-                const time = duration[i]
+            for(let i=0; i<albumPage.tracks.data.length && 5 > i; i++){
+
+                const divMain = document.createElement('div')
+                const div = document.createElement('div')
+                const divNumber = document.createElement('div')
+                const divNames = document.createElement('div')
+                const nameTrack = document.createElement('p')
+                const artist = document.createElement('p')
+                const divButton = document.createElement('div') 
+                const button = document.createElement('button')
+                const duration = document.createElement('p')
+                const dots = document.createElement('button')
+
+                divMain.classList.add('d-flex','justify-content-between','align-items-center','songContainerStyle','hoverStyle')
+                div.classList.add('d-flex','align-items-center')
+                nameTrack.classList.add('mb-0','fw-normal','size')
+                divButton.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'gap-3','margin')
+                duration.classList.add('mb-0', 'fw-light')
+
+                divNumber.className = 'me-3'
+                artist.className = 'fw-light'
+                button.className = 'bg-transparent'
+
+                button.id = 'small-heart'
+                dots.id = 'small-more'
+
+                let dur = albumPage.tracks.data[i].duration
+
+                if(dur.toString().slice(1,3) > 59 || dur.toString().slice(0,2) > 59){
+                    dur += 40
+                    if(dur.toString().length == 3){
+                        dur.toString().slice(0,1) + ':' + dur.toString().slice(1,3)
+                    }
+                }
+                if(dur.toString().length <= 2 && dur.toString().slice(0,2) <= 59){
+                    dur = '0' + albumPage.tracks.data[i].duration
+                }
                 
-                titles.innerText = albumPage.tracks.data[i].title
+                console.log(dur.toString().slice(0,1) + ':' + dur.toString().slice(1,3));
+                divNumber.textContent = i +1
+                nameTrack.textContent = albumPage.tracks.data[i].title
+                artist.textContent = albumPage.tracks.data[i].artist.name
+                duration.innerText = dur.toString().slice(0,1) + ':' + dur.toString().slice(1,3)
+                button.innerHTML = '<svg fill="white" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M1.69 2A4.582 4.582 0 0 1 8 2.023 4.583 4.583 0 0 1 11.88.817h.002a4.618 4.618 0 0 1 3.782 3.65v.003a4.543 4.543 0 0 1-1.011 3.84L9.35 14.629a1.765 1.765 0 0 1-2.093.464 1.762 1.762 0 0 1-.605-.463L1.348 8.309A4.582 4.582 0 0 1 1.689 2zm3.158.252A3.082 3.082 0 0 0 2.49 7.337l.005.005L7.8 13.664a.264.264 0 0 0 .311.069.262.262 0 0 0 .09-.069l5.312-6.33a3.043 3.043 0 0 0 .68-2.573 3.118 3.118 0 0 0-2.551-2.463 3.079 3.079 0 0 0-2.612.816l-.007.007a1.501 1.501 0 0 1-2.045 0l-.009-.008a3.082 3.082 0 0 0-2.121-.861z"></path></svg>'
+                dots.innerHTML = '<svg fill="white" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"><path d="M3 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm6.5 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>'
 
-                popular.innerText = albumPage.tracks.data[i].artist.name
-                names.innerText = albumPage.tracks.data[i].artist.name
+                divButton.append(button,duration,dots)
+                divNames.append(nameTrack,artist)
+                div.append(divNumber,divNames,divButton)
+                divMain.append(div)
 
-                time.innerText = albumPage.tracks.data[i].duration.toString().slice(0,1) + ':' + albumPage.tracks.data[i].duration.toString().slice(1,3)
+                songContainer.append(divMain)
+
+                // const titles = track[i]
+                // const names = nomeArtista[i]
+                // const time = duration[i]
+
+                // titles.innerText = albumPage.tracks.data[i].title
+                // console.log(albumPage.tracks.data.length);
+
+                // popular.innerText = albumPage.tracks.data[i].artist.name
+                // names.innerText = albumPage.tracks.data[i].artist.name
+                
+                // time.innerText = albumPage.tracks.data[i].duration.toString().slice(0,1) + ':' + albumPage.tracks.data[i].duration.toString().slice(1,3)
+
             }
-            body.append(bgResp)
         })
 }
 catch (err) {

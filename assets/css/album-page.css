@@ -12,6 +12,14 @@ body {
   filter: blur(500px);
 }
 
+.songContainerStyle{
+  margin-left: 4rem
+}
+.buttonStyle{
+  margin-right: 37rem; 
+  fill: white
+}
+
 .general-container {
   background-image: linear-gradient(top to bottom, rgba(209, 181, 76, 1), rgba(16, 16, 16, 1));
   margin-left: 300px;
@@ -235,10 +243,33 @@ li::marker {
 
 #favorites,
 #more,
-#small-heart,
+#small-heart{
+  opacity: 0;
+  border: none
+}
+
+.size{
+  width: 235px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.margin{
+  margin-left: 400px;
+}
+
+.hoverStyle:hover #small-heart{
+  opacity: 1;
+}
+.hoverStyle:hover #small-more{
+  opacity: 1;
+}
+
 #small-more {
   border: none;
   background-color: transparent;
+  opacity: 0;
 }
 #duration {
   font-size: 0.8rem;
