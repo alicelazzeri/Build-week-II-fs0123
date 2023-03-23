@@ -301,6 +301,9 @@ li::marker {
 #buonasera {
   margin-bottom: 20px;
 }
+#actpCard {
+  margin-left: 4rem;
+}
 #actpText {
   display: flex;
   align-items: center;
