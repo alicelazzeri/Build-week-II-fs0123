@@ -248,6 +248,12 @@ li::marker {
   border: none
 }
 
+#favorites,
+#more{
+  opacity: 1;
+  background-color: transparent;
+}
+
 .size{
   width: 235px;
   overflow: hidden;
