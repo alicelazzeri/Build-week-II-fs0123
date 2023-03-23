@@ -61,9 +61,6 @@ try {
 
                 if(dur.toString().slice(1,3) > 59 || dur.toString().slice(0,2) > 59){
                     dur += 40
-                    if(dur.toString().length == 3){
-                        dur.toString().slice(0,1) + ':' + dur.toString().slice(1,3)
-                    }
                 }
                 if(dur.toString().length <= 2 && dur.toString().slice(0,2) <= 59){
                     dur = '0' + albumPage.tracks.data[i].duration
