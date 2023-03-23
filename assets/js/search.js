@@ -2,14 +2,18 @@ const s = document.getElementById('search-input')
 const btnTutto = document.getElementById('tutto')
 const container = document.getElementById('container')
 const btnAlbum = document.getElementById('album')
+const buttons = document.getElementById('buttons')
 
+s.addEventListener('keyup',()=>{
+    buttons.classList.remove('d-none')
+})
 
-    s.addEventListener('keyup',() => {
+    btnTutto.addEventListener('click',() => {
         const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
         fetch(search)
             .then(r => r.json())
             .then(artist => {
-                container.classList.remove('d-none')
+                
                 const img = document.getElementById('artist')
                 const nomeArtista = document.getElementById('nome-artista')
     
@@ -54,9 +58,6 @@ const btnAlbum = document.getElementById('album')
     )
 
 album.onclick = ()=>{
-    while (container.children.length > 1) {
-        container.removeChild(container.lastChild);
-    }
     const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
     fetch(search)
     .then(r=>r.json())
@@ -89,9 +90,6 @@ album.onclick = ()=>{
 
             card.append(cardBody,img,pAlbum,pName)
             container.append(card)
-
-            console.log(set);
-            console.log(set.id);
 
             card.onclick = ()=>{
                 location.assign(`./album-page.html?id=${set.album.id}`)
