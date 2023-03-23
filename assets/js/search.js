@@ -1,6 +1,7 @@
 const s = document.getElementById('search-input')
 const btnTutto = document.getElementById('tutto')
-const container = document.getElementById('container')
+const containerTutto = document.getElementById('containerTutto')
+const containerAlbum = document.getElementById('containerAlbum')
 const btnAlbum = document.getElementById('album')
 const buttons = document.getElementById('buttons')
 
@@ -13,7 +14,8 @@ s.addEventListener('keyup',()=>{
         fetch(search)
             .then(r => r.json())
             .then(artist => {
-                
+                containerTutto.classList.remove('d-none')
+                containerAlbum.classList.add('d-none')
                 const img = document.getElementById('artist')
                 const nomeArtista = document.getElementById('nome-artista')
     
@@ -64,6 +66,9 @@ album.onclick = ()=>{
     .then(albm=>{
         console.log(albm);
         for(let i = 0;i<albm.data.length ;i++){
+            containerTutto.classList.add('d-none')
+            containerAlbum.classList.remove('d-none')
+
             const card = document.createElement('div')
             const cardBody = document.createElement('div')
             const img = document.createElement('img')
@@ -89,7 +94,7 @@ album.onclick = ()=>{
             pName.innerText = set.artist.name
 
             card.append(cardBody,img,pAlbum,pName)
-            container.append(card)
+            containerAlbum.append(card)
 
             card.onclick = ()=>{
                 location.assign(`./album-page.html?id=${set.album.id}`)
