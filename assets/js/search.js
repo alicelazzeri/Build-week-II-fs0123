@@ -27,6 +27,7 @@ btnArtisti.onclick = ()=>{
     fetch(search)
     .then(r=>r.json())
     .then(albm=>{
+        console.log(albm);
         if(isFocused === true){
             btnArtisti.disabled = true
             btnAlbum.disabled = false
@@ -41,7 +42,7 @@ btnArtisti.onclick = ()=>{
     const img = document.createElement('img')
     const pAlbum = document.createElement('p')
     const pName = document.createElement('p')
-    const set = albm.data[i].artist
+    const set = albm.data[i]
     const p = [pAlbum,pName]
     for(ps of p){
         ps.classList.add('px-2','overflow','mb-1','py-0','text-white')
@@ -55,9 +56,9 @@ btnArtisti.onclick = ()=>{
     pAlbum.style.fontSize = '0.8rem'
     pName.style.fontSize = '0.7rem'
     
-    img.src = set.picture
-    pAlbum.innerText = set.name
-    pName.innerText = set.type
+    img.src = set.artist.picture
+    pAlbum.innerText = set.artist.name
+    pName.innerText = set.artist.type
     
     card.append(cardBody,img,pAlbum,pName)
     containerArtist.append(card)
