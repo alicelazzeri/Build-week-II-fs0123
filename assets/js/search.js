@@ -2,8 +2,11 @@ const s = document.getElementById('search-input')
 const btnTutto = document.getElementById('tutto')
 const containerTutto = document.getElementById('containerTutto')
 const containerAlbum = document.getElementById('containerAlbum')
+const containerArtist = document.getElementById('containerArtist')
 let btnAlbum = document.getElementById('album')
+let btnArtisti = document.getElementById('btnArtisti')
 const buttons = document.getElementById('buttons')
+
 
 s.addEventListener('keyup',(e)=>{
     e.preventDefault()
@@ -18,11 +21,64 @@ s.addEventListener('click',(e)=>{
 
 let isFocused;
 
+btnArtisti.onclick = ()=>{
+    isFocused = true;
+    const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
+    fetch(search)
+    .then(r=>r.json())
+    .then(albm=>{
+        if(isFocused === true){
+            btnArtisti.disabled = true
+            btnAlbum.disabled = false
+            for(let i = 0; i < albm.data.length; i++){
+                containerTutto.classList.add('d-none')
+                containerAlbum.classList.add('d-none')
+                console.log(albm.data[i].artist);
+        containerArtist.classList.remove('d-none')
+    
+    const card = document.createElement('div')
+    const cardBody = document.createElement('div')
+    const img = document.createElement('img')
+    const pAlbum = document.createElement('p')
+    const pName = document.createElement('p')
+    const set = albm.data[i].artist
+    const p = [pAlbum,pName]
+    for(ps of p){
+        ps.classList.add('px-2','overflow','mb-1','py-0','text-white')
+    }
+    
+    card.style.width = '130px'
+    img.style.height = '130px'
+    
+    card.classList.add('card','m-3','px-0','bg-dark')
+    img.classList.add('card-img-top', 'p-2','rounded-circle')
+    pAlbum.style.fontSize = '0.8rem'
+    pName.style.fontSize = '0.7rem'
+    
+    img.src = set.picture
+    pAlbum.innerText = set.name
+    pName.innerText = set.type
+    
+    card.append(cardBody,img,pAlbum,pName)
+    containerArtist.append(card)
+    
+    card.onclick = ()=>{
+        location.assign(`./artist-page.html?id=${set.id}`)
+    }
+    }
+    }
+    }
+    
+    
+    )}
+
 btnTutto.addEventListener('click',() => {
     isFocused = false
     if(isFocused === false){
         containerAlbum.innerText = ''
+        containerArtist.innerText = ''
         btnAlbum.disabled = false
+        btnArtisti.disabled = false
     }
     const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
     fetch(search)
@@ -30,6 +86,7 @@ btnTutto.addEventListener('click',() => {
         .then(artist => {
             containerTutto.classList.remove('d-none')
             containerAlbum.classList.add('d-none')
+            containerArtist.classList.add('d-none')
             const img = document.getElementById('artist')
             const nomeArtista = document.getElementById('nome-artista')
 
@@ -83,6 +140,7 @@ fetch(search)
     console.log(e);
     if(isFocused === true){
     btnAlbum.disabled = true
+    btnArtisti.disabled = false
 for(let i = 0; i < albm.data.length; i++){
 containerTutto.classList.add('d-none')
 containerAlbum.classList.remove('d-none')
@@ -95,7 +153,7 @@ const pName = document.createElement('p')
 const set = albm.data[i]
 const p = [pAlbum,pName]
 for(ps of p){
-    ps.classList.add('px-2','overflow','mb-1','py-0')
+    ps.classList.add('px-2','overflow','mb-1','py-0','text-white')
 }
 
 card.style.width = '130px'
