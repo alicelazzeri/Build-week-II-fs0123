@@ -2,7 +2,7 @@ const id = new URLSearchParams(window.location.search).get('id')
 const api = `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`
 
 
-try {
+
     fetch(api)
         .then(r => r.json())
         .then(albumPage => {
@@ -87,21 +87,5 @@ try {
 
                 songContainer.append(divMain)
 
-                // const titles = track[i]
-                // const names = nomeArtista[i]
-                // const time = duration[i]
-
-                // titles.innerText = albumPage.tracks.data[i].title
-                // console.log(albumPage.tracks.data.length);
-
-                // popular.innerText = albumPage.tracks.data[i].artist.name
-                // names.innerText = albumPage.tracks.data[i].artist.name
-                
-                // time.innerText = albumPage.tracks.data[i].duration.toString().slice(0,1) + ':' + albumPage.tracks.data[i].duration.toString().slice(1,3)
-
             }
         })
-}
-catch (err) {
-    document.querySelector("body").innerHTML = err.message;
-}

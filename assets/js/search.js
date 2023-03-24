@@ -2,104 +2,113 @@ const s = document.getElementById('search-input')
 const btnTutto = document.getElementById('tutto')
 const containerTutto = document.getElementById('containerTutto')
 const containerAlbum = document.getElementById('containerAlbum')
-const btnAlbum = document.getElementById('album')
+let btnAlbum = document.getElementById('album')
 const buttons = document.getElementById('buttons')
 
-s.addEventListener('keyup',()=>{
-    buttons.classList.remove('d-none')
+s.addEventListener('keyup',(e)=>{
+    e.preventDefault()
+        buttons.classList.remove('d-none')
 })
 
-    btnTutto.addEventListener('click',() => {
-        const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
-        fetch(search)
-            .then(r => r.json())
-            .then(artist => {
-                containerTutto.classList.remove('d-none')
-                containerAlbum.classList.add('d-none')
-                const img = document.getElementById('artist')
-                const nomeArtista = document.getElementById('nome-artista')
-    
-                for (let i = 0; i < artist.data.length; i++) {
-
-                    img.src = artist.data[i].artist.picture
-                    nomeArtista.textContent = artist.data[i].artist.name
-                }
-
-                const album = document.querySelectorAll('.imgAlbum')
-                const nomeBrano = document.querySelectorAll('.nomeBrano')
-                const nomeArt = document.querySelectorAll('.nomeArtista')
-                const durata = document.querySelectorAll('.durata')
-
-                for(let j=0; j < album.length; j++){
-                    const imgAlbum = album[j]
-                    const brano = nomeBrano[j]
-                    const artista = nomeArt[j]
-                    const dur = durata[j]
-
-                    const set = artist.data[j]
-
-                    imgAlbum.setAttribute('height','50px')
-                    imgAlbum.setAttribute('width','50px')
-
-                    let colons = set.duration.toString()
-                    let a = colons.slice(0,1) + ':' + colons.slice(1)
-                    
-                    imgAlbum.src = set.album.cover
-                    brano.innerText = set.album.title
-                    artista.innerText = set.artist.name
-                    dur.innerText = a
-                }
-            }
-            )
-            .then(()=>{
-                if(s.value === ''){
-                    container.classList.add('d-none')
-                }
-            })
-    }
-    )
-
-album.onclick = ()=>{
+btnTutto.addEventListener('click',() => {
     const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
     fetch(search)
-    .then(r=>r.json())
-    .then(albm=>{
-        console.log(albm);
-        for(let i = 0;i<albm.data.length ;i++){
-            containerTutto.classList.add('d-none')
-            containerAlbum.classList.remove('d-none')
+        .then(r => r.json())
+        .then(artist => {
+            containerTutto.classList.remove('d-none')
+            containerAlbum.classList.add('d-none')
+            const img = document.getElementById('artist')
+            const nomeArtista = document.getElementById('nome-artista')
 
-            const card = document.createElement('div')
-            const cardBody = document.createElement('div')
-            const img = document.createElement('img')
-            const pAlbum = document.createElement('p')
-            const pName = document.createElement('p')
-            const set = albm.data[i]
+            for (let i = 0; i < artist.data.length; i++) {
 
-            const p = [pAlbum,pName]
-            for(ps of p){
-                ps.classList.add('px-2','overflow','mb-1','py-0')
+                img.src = artist.data[i].artist.picture
+                nomeArtista.textContent = artist.data[i].artist.name
             }
-            
-            card.style.width = '130px'
-            img.style.height = '130px'
 
-            card.classList.add('card','m-3','px-0','bg-dark')
-            img.classList.add('card-img-top', 'p-2')
-            pAlbum.style.fontSize = '0.8rem'
-            pName.style.fontSize = '0.7rem'
+            const album = document.querySelectorAll('.imgAlbum')
+            const nomeBrano = document.querySelectorAll('.nomeBrano')
+            const nomeArt = document.querySelectorAll('.nomeArtista')
+            const durata = document.querySelectorAll('.durata')
 
-            img.src = set.album.cover_medium
-            pAlbum.innerText = set.album.title
-            pName.innerText = set.artist.name
+            for(let j=0; j < album.length; j++){
+                const imgAlbum = album[j]
+                const brano = nomeBrano[j]
+                const artista = nomeArt[j]
+                const dur = durata[j]
 
-            card.append(cardBody,img,pAlbum,pName)
-            containerAlbum.append(card)
+                const set = artist.data[j]
 
-            card.onclick = ()=>{
-                location.assign(`./album-page.html?id=${set.album.id}`)
+                imgAlbum.setAttribute('height','50px')
+                imgAlbum.setAttribute('width','50px')
+
+                let colons = set.duration.toString()
+                let a = colons.slice(0,1) + ':' + colons.slice(1)
+                
+                imgAlbum.src = set.album.cover
+                brano.innerText = set.album.title
+                artista.innerText = set.artist.name
+                dur.innerText = a
             }
         }
-
-    })
+        )
+        .then(()=>{
+            if(s.value === ''){
+                container.classList.add('d-none')
+            }
+        })
 }
+)
+
+btnAlbum.onclick = ()=>{
+const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
+fetch(search)
+.then(r=>r.json())
+.then(albm=>{
+    const e = [albm.data]
+    console.log(e);
+    const used = []
+
+for(let i = 0; i < albm.data.length; i++){
+containerTutto.classList.add('d-none')
+containerAlbum.classList.remove('d-none')
+
+const card = [document.createElement('div')]
+const cardBody = document.createElement('div')
+const img = document.createElement('img')
+const pAlbum = document.createElement('p')
+const pName = document.createElement('p')
+const set = albm.data[i]
+const p = [pAlbum,pName]
+for(ps of p){
+    ps.classList.add('px-2','overflow','mb-1','py-0')
+}
+
+// card.style.width = '130px'
+// img.style.height = '130px'
+
+card.classList.add('card','m-3','px-0','bg-dark')
+img.classList.add('card-img-top', 'p-2')
+pAlbum.style.fontSize = '0.8rem'
+pName.style.fontSize = '0.7rem'
+
+img.src = set.album.cover_medium
+pAlbum.innerText = set.album.title
+pName.innerText = set.artist.name
+
+card.append(cardBody,img,pAlbum,pName)
+card.push(used)
+// containerAlbum.append(card)
+
+card.onclick = ()=>{
+    location.assign(`./album-page.html?id=${set.album.id}`)
+}
+}
+
+containerAlbum.append(used)
+
+}
+
+
+)}
+
