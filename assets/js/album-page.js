@@ -107,7 +107,6 @@ const api = `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`
             console.log(albumPage);
             if(albumPage.tracks.data.length > 5){
                 for(let i=5; i<albumPage.tracks.data.length && 10 > i; i++){
-
                 const divMain = document.createElement('div')
                 const div = document.createElement('div')
                 const divNumber = document.createElement('div')
@@ -174,5 +173,13 @@ const api = `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`
             }
 
             const popularArtist = document.getElementById('popular-artist')
+            const picPlaying = document.querySelector('.pic img')
+            const track = document.querySelector('.track')
+            const nameArtist = document.querySelector('.nome-artista')
+            console.log(track);
+
             popularArtist.innerText = albumPage.artist.name
+            picPlaying.src = albumPage.cover_medium
+            track.innerText = albumPage.title
+            nameArtist.innerText = albumPage.artist.name
         })
