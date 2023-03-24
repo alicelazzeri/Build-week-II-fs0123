@@ -1,6 +1,6 @@
 body {
   font-family: "Circular";
-  background-color: #121212;
+  background-image: linear-gradient(30deg, rgb(0, 0, 0), rgb(58, 58, 58));
 }
 
 nav {
@@ -181,7 +181,6 @@ li::marker {
 
 #mainTopCont {
   padding: 20px;
-  background-image: linear-gradient(30deg, rgb(0, 0, 0), rgb(58, 58, 58));
 }
 
 #text {
@@ -225,13 +224,16 @@ li::marker {
 }
 
 #hideAds {
-  height: 30px;
-  border-radius: 50px;
+  height: 20px;
+  border-radius: 30px;
   border: none;
-  padding-inline: 10px;
+  padding-top: 0.8rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background-color: #2b2b2b;
   color: #696969;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 @media (max-width: 1287px) {
@@ -296,14 +298,17 @@ li::marker {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 #buonasera {
   margin-bottom: 20px;
 }
-#actpCard {
+#atcpCards #actpCard {
   margin-left: 4rem;
+  margin-top: 20px;
 }
+
 #actpText {
   display: flex;
   align-items: center;
@@ -330,7 +335,7 @@ a {
 }
 
 #actpCard img {
-  width: 180px;
+  width: 150px;
   border-radius: 5px;
 }
 #actpCards {
@@ -340,7 +345,7 @@ a {
 #actpCard {
   border-radius: 5px;
   display: flex;
-  padding: 10px;
+  padding: 15px;
   background-color: #151515;
   flex-direction: column;
   max-width: 200px;

@@ -1,3 +1,6 @@
+body {
+  background-color: #121212;
+}
 .general-container {
   margin-left: 280px;
 }
@@ -25,20 +28,19 @@
   position: relative;
 }
 
-#buttons button{
+#buttons button {
   background-color: #232323;
   border-radius: 30px;
 }
-#buttons button:hover{
+#buttons button:hover {
   background-color: #2a2a2a;
 }
-#buttons button:focus, #buttons button:disabled{
+#buttons button:focus {
   background-color: white;
-  color: black!important;
-  cursor: pointer;
+  color: black !important;
 }
 
-#nome-album-nav{
+#nome-album-nav {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.69);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -46,8 +48,8 @@
   width: 200px;
 }
 
-#nome-album{
-  font-size: 4rem; 
+#nome-album {
+  font-size: 4rem;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.69);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -55,19 +57,18 @@
   width: 700px;
 }
 
-#nome-artista{
-  font-size: 1rem; 
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.69)
-  
+#nome-artista {
+  font-size: 1rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.69);
 }
 
-.overflow{
+.overflow {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
-#container{
+#container {
   width: 60%;
 }
 
@@ -80,55 +81,55 @@
   position: absolute;
   bottom: 10px;
   right: 20px;
-  opacity: 0
+  opacity: 0;
 }
 
-.brano:hover{
+.brano:hover {
   background-color: #282828;
 }
-.brano:hover svg{
+.brano:hover svg {
   opacity: 1;
 }
 
-.nomeBrano:hover{
+.nomeBrano:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-.nomeArtista:hover{
+.nomeArtista:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.brani div img{
+.brani div img {
   width: 50px;
-  padding: 10px
+  padding: 10px;
 }
-.brani svg{
+.brani svg {
   opacity: 0;
   fill: white;
   left: 25px;
 }
 
-#play svg{
+#play svg {
   position: absolute;
   right: 12px;
   bottom: 13px;
 }
-#play:hover{
+#play:hover {
   transform: scale(1.1);
 }
 
-#results-container:hover #play{
-  animation: up 0.3s 0.3s both
+#results-container:hover #play {
+  animation: up 0.3s 0.3s both;
 }
 
 @keyframes up {
-  from{
+  from {
     bottom: 10px;
   }
-  to{
+  to {
     opacity: 1;
-    bottom: 20px
+    bottom: 20px;
   }
 }
 
