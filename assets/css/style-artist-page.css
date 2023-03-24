@@ -1,5 +1,5 @@
 body {
-  height: 1000px;
+  height: 2000px;
 }
 #all {
   background: linear-gradient(to bottom, rgb(255, 255, 255) -80%, #121212);
@@ -9,7 +9,7 @@ body {
 
 #top {
   background-image: url(https://citynews-romatoday.stgy.ovh/~media/original-hi/4043692886988/play-music-stop-war-2.jpg);
-  height: 40vh;
+  height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -18,7 +18,6 @@ body {
   justify-content: end;
   font-weight: 600;
   color: rgb(226, 226, 226);
-  padding: 20px;
   text-shadow: 1px 1px 10px 1px black;
 }
 
