@@ -32,9 +32,10 @@
 #buttons button:hover{
   background-color: #2a2a2a;
 }
-#buttons button:focus{
+#buttons button:focus, #buttons button:disabled{
   background-color: white;
   color: black!important;
+  cursor: pointer;
 }
 
 #nome-album-nav{

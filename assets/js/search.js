@@ -9,6 +9,12 @@ s.addEventListener('keyup',(e)=>{
     e.preventDefault()
         buttons.classList.remove('d-none')
 })
+s.addEventListener('click',(e)=>{
+    e.preventDefault()
+        buttons.classList.add('d-none')
+        containerAlbum.classList.add('d-none')
+        containerTutto.classList.add('d-none')
+})
 
 let isFocused;
 
