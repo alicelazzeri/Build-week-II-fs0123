@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const id = new URLSearchParams(window.location.search).get("id");
-const api = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`;
+const api = `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`;
 
 fetch(api)
   .then(r => r.json())
@@ -116,5 +116,3 @@ fetch(api)
       songContainer.append(divMain);
     }
   });
-
-const url = `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`;
