@@ -10,7 +10,14 @@ s.addEventListener('keyup',(e)=>{
         buttons.classList.remove('d-none')
 })
 
+let isFocused;
+
 btnTutto.addEventListener('click',() => {
+    isFocused = false
+    if(isFocused === false){
+        containerAlbum.innerText = ''
+        btnAlbum.disabled = false
+    }
     const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
     fetch(search)
         .then(r => r.json())
@@ -61,19 +68,20 @@ btnTutto.addEventListener('click',() => {
 )
 
 btnAlbum.onclick = ()=>{
+isFocused = true;
 const search = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${s.value}`
 fetch(search)
 .then(r=>r.json())
 .then(albm=>{
     const e = [albm.data]
     console.log(e);
-    const used = []
-
+    if(isFocused === true){
+    btnAlbum.disabled = true
 for(let i = 0; i < albm.data.length; i++){
 containerTutto.classList.add('d-none')
 containerAlbum.classList.remove('d-none')
 
-const card = [document.createElement('div')]
+const card = document.createElement('div')
 const cardBody = document.createElement('div')
 const img = document.createElement('img')
 const pAlbum = document.createElement('p')
@@ -84,8 +92,8 @@ for(ps of p){
     ps.classList.add('px-2','overflow','mb-1','py-0')
 }
 
-// card.style.width = '130px'
-// img.style.height = '130px'
+card.style.width = '130px'
+img.style.height = '130px'
 
 card.classList.add('card','m-3','px-0','bg-dark')
 img.classList.add('card-img-top', 'p-2')
@@ -97,16 +105,13 @@ pAlbum.innerText = set.album.title
 pName.innerText = set.artist.name
 
 card.append(cardBody,img,pAlbum,pName)
-card.push(used)
-// containerAlbum.append(card)
+containerAlbum.append(card)
 
 card.onclick = ()=>{
     location.assign(`./album-page.html?id=${set.album.id}`)
 }
 }
-
-containerAlbum.append(used)
-
+}
 }
 
 
