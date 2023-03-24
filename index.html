@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Spotify &#8211; Homepage" />
+    <title>Spotify &#8211; Homepage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="assets/css/circular-font.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/album-page.css" />
+
+    <link rel="stylesheet" href="assets/css/search-page.css" />
+
+    <link rel="icon" type="image/x-icon" href="assets/imgs/logo.ico" />
+  </head>
+
+  <body>
+    <div class="general-container container-fluid">
+      <div id="navBar">
+        <div id="pointerNone"><i class="bi bi-three-dots"></i></div>
+        <div id="navL">
+          <a href="login-page.html"><i class="bi bi-arrow-left-circle-fill text-secondary"></i></a>
+          <a href="album-page.html"><i class="bi bi-arrow-right-circle-fill text-secondary"></i></a>
+        </div>
+
+        <div id="navR">
+          <div id="navUpgrade">Effettua l'upgrade</div>
+          <div id="profile">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt=""
+            />
+
+            <li id="nav" class="nav-item dropdown list-group">
+              <a
+                class="nav-link dropdown-toggle"
+                id="name"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-expanded="false"
+                >Nome utente</a
+              >
+              <ul class="dropdown-menu bg bg-dark" style="z-index: 200">
+                <li class="d-flex justify-space-between align-items-center">
+                  <a class="dropdown-item text-white" href="#">Account</a
+                  ><i class="bi bi-box-arrow-up-right mr-2 padd"></i>
+                </li>
+                <li><a class="dropdown-item text-white" href="#">Profilo</a></li>
+                <li class="d-flex justify-space-between align-items-center">
+                  <a class="dropdown-item text-white" href="#">Effettua l'upgrade</a
+                  ><i class="bi bi-box-arrow-up-right padd"></i>
+                </li>
+                <li><a class="dropdown-item text-white" href="#">Sessione privata</a></li>
+                <li><a class="dropdown-item text-white" href="#">Impostazioni</a></li>
+                <li><hr class="dropdown-divider text-white" /></li>
+                <li><a class="dropdown-item text-white" href="login-page.html">Esci</a></li>
+              </ul>
+            </li>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white" style="width: 280px">
+        <div class="container-fluid">
+          <a href="#" class="d-flex align-items-center mb-3 text-white text-decoration-none">
+            <svg id="logo" viewBox="0 0 1134 340" class="spotify-logo--text" xmlns="http://www.w3.org/2000/svg">
+              <title>Spotify</title>
+              <path
+                fill="currentColor"
+                d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 2-16-18-4-20 64-15 118-8 162 19 11 7 0 24-11 18zm17-45c-45-28-114-36-167-20-17 5-23-21-7-25 61-18 136-9 188 23 14 9 0 31-14 22zM80 133c-17 6-28-23-9-30 59-18 159-15 221 22 17 9 1 37-17 27-54-32-144-35-195-19zm379 91c-17 0-33-6-47-20-1 0-1 1-1 1l-16 19c-1 1-1 2 0 3 18 16 40 24 64 24 34 0 55-19 55-47 0-24-15-37-50-46-29-7-34-12-34-22s10-16 23-16 25 5 39 15c0 0 1 1 2 1s1-1 1-1l14-20c1-1 1-1 0-2-16-13-35-20-56-20-31 0-53 19-53 46 0 29 20 38 52 46 28 6 32 12 32 22 0 11-10 17-25 17zm95-77v-13c0-1-1-2-2-2h-26c-1 0-2 1-2 2v147c0 1 1 2 2 2h26c1 0 2-1 2-2v-46c10 11 21 16 36 16 27 0 54-21 54-61s-27-60-54-60c-15 0-26 5-36 17zm30 78c-18 0-31-15-31-35s13-34 31-34 30 14 30 34-12 35-30 35zm68-34c0 34 27 60 62 60s62-27 62-61-26-60-61-60-63 27-63 61zm30-1c0-20 13-34 32-34s33 15 33 35-13 34-32 34-33-15-33-35zm140-58v-29c0-1 0-2-1-2h-26c-1 0-2 1-2 2v29h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v58c0 23 11 35 34 35 9 0 18-2 25-6 1 0 1-1 1-2v-21c0-1 0-2-1-2h-2c-5 3-11 4-16 4-8 0-12-4-12-12v-54h30c1 0 2-1 2-2v-22c0-1-1-2-2-2h-30zm129-3c0-11 4-15 13-15 5 0 10 0 15 2h1s1-1 1-2V93c0-1 0-2-1-2-5-2-12-3-22-3-24 0-36 14-36 39v5h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v89c0 1 1 2 2 2h26c1 0 1-1 1-2v-89h25l37 89c-4 9-8 11-14 11-5 0-10-1-15-4h-1l-1 1-9 19c0 1 0 3 1 3 9 5 17 7 27 7 19 0 30-9 39-33l45-116v-2c0-1-1-1-2-1h-27c-1 0-1 1-1 2l-28 78-30-78c0-1-1-2-2-2h-44v-3zm-83 3c-1 0-2 1-2 2v113c0 1 1 2 2 2h26c1 0 1-1 1-2V134c0-1 0-2-1-2h-26zm-6-33c0 10 9 19 19 19s18-9 18-19-8-18-18-18-19 8-19 18zm245 69c10 0 19-8 19-18s-9-18-19-18-18 8-18 18 8 18 18 18zm0-34c9 0 17 7 17 16s-8 16-17 16-16-7-16-16 7-16 16-16zm4 18c3-1 5-3 5-6 0-4-4-6-8-6h-8v19h4v-6h4l4 6h5zm-3-9c2 0 4 1 4 3s-2 3-4 3h-4v-6h4z"
+              ></path>
+            </svg>
+          </a>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item d-flex align-items-center">
+              <svg
+                role="img"
+                height="24"
+                width="24"
+                aria-hidden="true"
+                class="Svg-sc-ytk21e-0 uPxdw home-active-icon sidebar-icon"
+                viewBox="0 0 24 24"
+                data-encore-id="icon"
+              >
+                <path
+                  d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z"
+                ></path>
+              </svg>
+              <a href="index.html" class="nav-link sidebar-link" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <svg
+                role="img"
+                height="24"
+                width="24"
+                aria-hidden="true"
+                class="Svg-sc-ytk21e-0 uPxdw search-icon sidebar-icon"
+                viewBox="0 0 24 24"
+                data-encore-id="icon"
+              >
+                <path
+                  d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
+                ></path>
+              </svg>
+              <a href="search-page.html" class="nav-link sidebar-link" aria-current="page">Cerca</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <svg
+                role="img"
+                height="24"
+                width="24"
+                aria-hidden="true"
+                class="Svg-sc-ytk21e-0 uPxdw collection-icon sidebar-icon"
+                viewBox="0 0 24 24"
+                data-encore-id="icon"
+              >
+                <path
+                  d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
+                ></path>
+              </svg>
+              <a href="#" class="nav-link sidebar-link" aria-current="page">La tua libreria</a>
+            </li>
+            <hr style="color: #101010" />
+            <li class="nav-item d-flex align-items-center">
+              <svg
+                role="img"
+                height="12"
+                width="12"
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                data-encore-id="icon"
+                class="Svg-sc-ytk21e-0 uPxdw sidebar-icon add-bg add"
+              >
+                <path
+                  d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"
+                ></path>
+              </svg>
+              <a href="#" class="nav-link mx-4 sidebar-link" aria-current="page">Crea playlist</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <svg
+                role="img"
+                height="12"
+                width="12"
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                data-encore-id="icon"
+                class="Svg-sc-ytk21e-0 uPxdw sidebar-icon heart-bg"
+              >
+                <path
+                  d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z"
+                ></path>
+              </svg>
+              <a href="#" class="nav-link mx-4 mt-2 sidebar-par sidebar-link" aria-current="page"
+                >Brani che ti piacciono</a
+              >
+            </li>
+            <hr />
+            <p class="sidebar-link">La mia playlist n. 1</p>
+          </ul>
+          <div id="install" class="d-flex align-items-center">
+            <svg
+              role="img"
+              height="24"
+              width="24"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 uPxdw sidebar-icon"
+            >
+              <path
+                d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z"
+              ></path>
+              <path
+                d="M12 6.05a1 1 0 0 1 1 1v7.486l1.793-1.793a1 1 0 1 1 1.414 1.414L12 18.364l-4.207-4.207a1 1 0 1 1 1.414-1.414L11 14.536V7.05a1 1 0 0 1 1-1z"
+              ></path>
+            </svg>
+            <a href="#" class="nav-link mx-3 sidebar-link" aria-current="page">Installa app</a>
+          </div>
+        </div>
+      </div>
+      <div id="main">
+        <div id="mainTopCont" style="margin-top: 5rem; margin-right: 250px">
+          <div id="imgAlbum">
+            <div id="img">
+              <img src="https://cdn2.albumoftheyear.org/375x/album/627860-dimmi-che-ce-feat-tedua_1818.jpg" alt="" />
+            </div>
+            <div id="album">
+              <div id="text">
+                <h6>ALBUM</h6>
+                <h3>Dimmi Che C'è (feat. Tedua)</h3>
+                <h6>thasup</h6>
+                <h5>Ascolta il nuovo singolo di thasup</h5>
+              </div>
+              <div id="buttons">
+                <button class="buttonAlbum" id="play">Play</button>
+                <button class="buttonAlbum" id="save">Salva</button>
+                <i class="bi bi-three-dots i"></i>
+              </div>
+            </div>
+          </div>
+          <button id="hideAds">NASCONDI ANNUNCI</button>
+        </div>
+        <div id="buonasera" style="margin-top: 5rem; margin-left: 20px; margin-right: 270px">
+          <h3>Buonasera</h3>
+          <div id="buonaseraItems">
+            <div id="buonaseraItem">
+              <div id="qAlb">
+                <img
+                  src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61+ycYGpVFL._AC_SL1200_.jpg"
+                  alt=""
+                />
+                <img src="https://i.scdn.co/image/ab67616d0000b273755995e9ff2b1b0c753f5eb8" alt="" />
+                <img
+                  src="https://a6p8a2b3.stackpathcdn.com/EssoBPrLoAGelrPnMwwOxjXbeHM=/1200x1200/smart/rockol-img/img/foto/upload/sirio-lazza-cover-ts1649378565.jpeg"
+                  alt=""
+                />
+                <img src="https://www.earone.it/newsimages/marco_mengoni_due_vite.jpg___th_320_0.jpg" alt="" />
+              </div>
+              <div id="qAlbText">Hip-Hop italiano</div>
+            </div>
+            <div id="buonaseraItem">
+              <div id="qAlb">
+                <img
+                  src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61+ycYGpVFL._AC_SL1200_.jpg"
+                  alt=""
+                />
+                <img src="https://i.scdn.co/image/ab67616d0000b273755995e9ff2b1b0c753f5eb8" alt="" />
+                <img
+                  src="https://a6p8a2b3.stackpathcdn.com/EssoBPrLoAGelrPnMwwOxjXbeHM=/1200x1200/smart/rockol-img/img/foto/upload/sirio-lazza-cover-ts1649378565.jpeg"
+                  alt=""
+                />
+                <img src="https://www.earone.it/newsimages/marco_mengoni_due_vite.jpg___th_320_0.jpg" alt="" />
+              </div>
+              <div id="qAlbText">Hip-Hop italiano</div>
+            </div>
+            <div id="buonaseraItem">
+              <div id="qAlb">
+                <img
+                  src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61+ycYGpVFL._AC_SL1200_.jpg"
+                  alt=""
+                />
+                <img src="https://i.scdn.co/image/ab67616d0000b273755995e9ff2b1b0c753f5eb8" alt="" />
+                <img
+                  src="https://a6p8a2b3.stackpathcdn.com/EssoBPrLoAGelrPnMwwOxjXbeHM=/1200x1200/smart/rockol-img/img/foto/upload/sirio-lazza-cover-ts1649378565.jpeg"
+                  alt=""
+                />
+                <img src="https://www.earone.it/newsimages/marco_mengoni_due_vite.jpg___th_320_0.jpg" alt="" />
+              </div>
+              <div id="qAlbText">Hip-Hop italiano</div>
+            </div>
+            <div id="buonaseraItem">
+              <div id="qAlb">
+                <img
+                  src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61+ycYGpVFL._AC_SL1200_.jpg"
+                  alt=""
+                />
+                <img src="https://i.scdn.co/image/ab67616d0000b273755995e9ff2b1b0c753f5eb8" alt="" />
+                <img
+                  src="https://a6p8a2b3.stackpathcdn.com/EssoBPrLoAGelrPnMwwOxjXbeHM=/1200x1200/smart/rockol-img/img/foto/upload/sirio-lazza-cover-ts1649378565.jpeg"
+                  alt=""
+                />
+                <img src="https://www.earone.it/newsimages/marco_mengoni_due_vite.jpg___th_320_0.jpg" alt="" />
+              </div>
+              <div id="qAlbText">Hip-Hop italiano</div>
+            </div>
+            <div id="buonaseraItem">
+              <div id="qAlb">
+                <img
+                  src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61+ycYGpVFL._AC_SL1200_.jpg"
+                  alt=""
+                />
+                <img src="https://i.scdn.co/image/ab67616d0000b273755995e9ff2b1b0c753f5eb8" alt="" />
+                <img
+                  src="https://a6p8a2b3.stackpathcdn.com/EssoBPrLoAGelrPnMwwOxjXbeHM=/1200x1200/smart/rockol-img/img/foto/upload/sirio-lazza-cover-ts1649378565.jpeg"
+                  alt=""
+                />
+                <img src="https://www.earone.it/newsimages/marco_mengoni_due_vite.jpg___th_320_0.jpg" alt="" />
+              </div>
+              <div id="qAlbText">Hip-Hop italiano</div>
+            </div>
+            <div id="buonaseraItem">
+              <div id="qAlb">
+                <img
+                  src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61+ycYGpVFL._AC_SL1200_.jpg"
+                  alt=""
+                />
+                <img src="https://i.scdn.co/image/ab67616d0000b273755995e9ff2b1b0c753f5eb8" alt="" />
+                <img
+                  src="https://a6p8a2b3.stackpathcdn.com/EssoBPrLoAGelrPnMwwOxjXbeHM=/1200x1200/smart/rockol-img/img/foto/upload/sirio-lazza-cover-ts1649378565.jpeg"
+                  alt=""
+                />
+                <img src="https://www.earone.it/newsimages/marco_mengoni_due_vite.jpg___th_320_0.jpg" alt="" />
+              </div>
+              <div id="qAlbText">Hip-Hop italiano</div>
+            </div>
+          </div>
+        </div>
+        <div id="actp" style="margin-top: 5rem; margin-left: 30px; margin-right: 270px; margin-bottom: 200px">
+          <div id="actpText">
+            <h4>Altro di ciò che ti piace</h4>
+
+            <a id="visualizzaT" href=""><p>VISUALIZZA TUTTO</p> </a>
+          </div>
+          <div id="actpCards" class="row">
+            <div id="actpCard" class="col-sm-6 col-md-4 col-xxl-2">
+              <img src="https://i.scdn.co/image/ab67706f0000000276aa3690aa780a4e59a8b337" alt="" />
+
+              <div id="textImg">
+                <h5>Hot Hits Italia</h5>
+                <p>La playlist più calda del momento</p>
+              </div>
+            </div>
+            <div id="actpCard" class="col-sm-6 col-md-4 col-xxl-2">
+              <img src="https://i.scdn.co/image/ab67706f0000000276aa3690aa780a4e59a8b337" alt="" />
+
+              <div id="textImg">
+                <h5>Hot Hits Italia</h5>
+                <p>La playlist più calda del momento</p>
+              </div>
+            </div>
+            <div id="actpCard" class="col-sm-6 col-md-4 col-xxl-2">
+              <img src="https://i.scdn.co/image/ab67706f0000000276aa3690aa780a4e59a8b337" alt="" />
+
+              <div id="textImg">
+                <h5>Hot Hits Italia</h5>
+                <p>La playlist più calda del momento</p>
+              </div>
+            </div>
+            <div id="actpCard" class="col-sm-6 col-md-4 col-xxl-2">
+              <img src="https://i.scdn.co/image/ab67706f0000000276aa3690aa780a4e59a8b337" alt="" />
+
+              <div id="textImg">
+                <h5>Hot Hits Italia</h5>
+                <p>La playlist più calda del momento</p>
+              </div>
+            </div>
+            <div id="actpCard" class="col-sm-6 col-md-4 col-xxl-2">
+              <img src="https://i.scdn.co/image/ab67706f0000000276aa3690aa780a4e59a8b337" alt="" />
+
+              <div id="textImg">
+                <h5>Hot Hits Italia</h5>
+                <p>La playlist più calda del momento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="aside" class="d-flex flex-column flex-shrink-0 p-3 text-white mb-5">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between ps-3" style="margin-top: 4rem">
+          <p>Attività amici</p>
+          <div class="d-flex align-items-center ms-4 mb-3">
+            <i class="aside-icons bi bi-person-plus"></i>
+            <i class="aside icons bi bi-x" style="font-size: 1.5rem"></i>
+          </div>
+        </div>
+        <ul class="nav nav-pills mb-auto">
+          <div class="d-flex align-items-center">
+            <img src="assets/imgs/search/image-13.jpeg" alt="Profile-pic" style="width: 40px; border-radius: 20px" />
+            <li class="nav-item w-100">
+              <div class="d-flex justify-content-between align-items-end">
+                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                  >Alice Lazzeri</a
+                >
+                <p style="font-size: 0.7rem" class="px-3 mb-2">4 ore</p>
+              </div>
+
+              <p style="font-size: 0.7rem" class="px-3">In Camera &#183; Yumi Zouma</p>
+              <p style="font-size: 0.7rem" class="px-3"><i class="bi bi-record-circle me-1"></i> EP III</p>
+            </li>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <img src="assets/imgs/search/image-14.jpg" alt="Profile-pic" style="width: 40px; border-radius: 20px" />
+            <li class="nav-item w-100">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                  >Marianna Bagno</a
+                >
+                <p style="font-size: 0.7rem" class="mb-1">4 ore</p>
+              </div>
+
+              <p style="font-size: 0.7rem" class="px-3">Aimed to Kill &#183; Jade LeMac</p>
+              <p style="font-size: 0.7rem" class="px-3"><i class="bi bi-record-circle me-1"></i> Aimed to Kill</p>
+            </li>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <img src="assets/imgs/search/image-15.jpg" alt="Profile-pic" style="width: 40px; border-radius: 20px" j />
+            <li class="nav-item w-100">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="#" style="font-size: 0.9rem" class="nav-link sidebar-link" aria-current="page"
+                  >Andrea Caforio</a
+                >
+                <p style="font-size: 0.7rem" class="mb-1">4 ore</p>
+              </div>
+
+              <p style="font-size: 0.7rem" class="px-3">New Kings &#183; Sleeping Wolf</p>
+              <p style="font-size: 0.7rem" class="px-3">
+                <i class="bi bi-music-note-beamed me-1"></i> Twint Badass Mood
+              </p>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div
+      id="music-player"
+      class="d-flex justify-content-between flex-wrap align-items-center bg-black bg-gradient border-top border-dark border-1 p-4"
+    >
+      <div class="d-flex justify-content-between align-items-center gap-1">
+        <img
+          src="assets/imgs/search/image-18.jpg"
+          alt="Pic playing"
+          width="60px"
+          height="60px"
+          style="margin-bottom: 6rem"
+        />
+        <div class="d-flex flex-column" style="margin-bottom: 5rem; margin-left: 1rem">
+          <p class="mb-0 track">Montanelli - Intro</p>
+          <p class="fw-light nome-artista" style="font-size: 0.8rem" id="artist-playing">Pinguini Tattici Nucleari</p>
+        </div>
+        <div class="d-flex align-items-center gap-3" style="margin-bottom: 6rem; margin-left: 1rem">
+          <svg
+            role="img"
+            height="16"
+            width="16"
+            aria-hidden="true"
+            viewBox="0 0 16 16"
+            data-encore-id="icon"
+            class="Svg-sc-ytk21e-0 gQUQL"
+            style="fill: rgb(167, 167, 167)"
+          >
+            <path
+              d="M1.69 2A4.582 4.582 0 0 1 8 2.023 4.583 4.583 0 0 1 11.88.817h.002a4.618 4.618 0 0 1 3.782 3.65v.003a4.543 4.543 0 0 1-1.011 3.84L9.35 14.629a1.765 1.765 0 0 1-2.093.464 1.762 1.762 0 0 1-.605-.463L1.348 8.309A4.582 4.582 0 0 1 1.689 2zm3.158.252A3.082 3.082 0 0 0 2.49 7.337l.005.005L7.8 13.664a.264.264 0 0 0 .311.069.262.262 0 0 0 .09-.069l5.312-6.33a3.043 3.043 0 0 0 .68-2.573 3.118 3.118 0 0 0-2.551-2.463 3.079 3.079 0 0 0-2.612.816l-.007.007a1.501 1.501 0 0 1-2.045 0l-.009-.008a3.082 3.082 0 0 0-2.121-.861z"
+            ></path>
+          </svg>
+          <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(167, 167, 167)">
+            <g fill="rgb(167, 167, 167)" fill-rule="evenodd">
+              <path
+                d="M1 3v9h14V3H1zm0-1h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
+                fill-rule="nonzero"
+              ></path>
+              <path d="M10 8h4v3h-4z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div id="play-container" class="d-flex flex-column align-items-center mb-2" style="margin-left: -40rem">
+        <div
+          id="buttons-container"
+          class="d-flex justify-content-between align-items-center gap-3"
+          style="margin-left: 36rem"
+        >
+          <button class="command-btn">
+            <svg
+              role="img"
+              height="16"
+              width="16"
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 gQUQL command"
+            >
+              <path
+                d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 0 0 .39 3.5z"
+              ></path>
+              <path
+                d="m7.5 10.723.98-1.167.957 1.14a2.25 2.25 0 0 0 1.724.804h1.947l-1.017-1.018a.75.75 0 1 1 1.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 1 1-1.06-1.06L13.109 13H11.16a3.75 3.75 0 0 1-2.873-1.34l-.787-.938z"
+              ></path>
+            </svg>
+          </button>
+          <button class="command-btn">
+            <svg
+              role="img"
+              height="16"
+              width="16"
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 gQUQL command"
+            >
+              <path
+                d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"
+              ></path>
+            </svg>
+          </button>
+          <button class="command-btn play-btn">
+            <div id="play-bg">
+              <svg
+                role="img"
+                height="16"
+                width="16"
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                data-encore-id="icon"
+                class="Svg-sc-ytk21e-0 gQUQL command"
+                style="position: absolute; bottom: 9.5px; right: 9.5px; fill: #121212"
+              >
+                <path
+                  d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
+                ></path>
+              </svg>
+            </div>
+          </button>
+          <button class="command-btn">
+            <svg
+              role="img"
+              height="16"
+              width="16"
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 gQUQL command"
+            >
+              <path
+                d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"
+              ></path>
+            </svg>
+          </button>
+          <button class="command-btn">
+            <svg
+              role="img"
+              height="16"
+              width="16"
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 gQUQL command"
+            >
+              <path
+                d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div id="bar-container">
+          <div class="bar-1"></div>
+          <div class="bar-text">
+            <span id="current" title="current">1:01</span><span id="end" title="end">3:35</span>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-2" style="margin-bottom: 7rem">
+        <svg
+          role="img"
+          height="16"
+          width="16"
+          aria-hidden="true"
+          viewBox="0 0 16 16"
+          data-encore-id="icon"
+          class="Svg-sc-ytk21e-0 gQUQL"
+          style="fill: rgb(199, 199, 199)"
+        >
+          <path
+            d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5zm2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2h-9z"
+          ></path>
+        </svg>
+        <svg
+          role="presentation"
+          height="16"
+          width="16"
+          aria-hidden="true"
+          class="Svg-sc-ytk21e-0 gQUQL"
+          viewBox="0 0 16 16"
+          data-encore-id="icon"
+          style="fill: rgb(199, 199, 199)"
+        >
+          <path
+            d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
+          ></path>
+          <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+        </svg>
+        <svg
+          role="presentation"
+          height="16"
+          width="16"
+          aria-hidden="true"
+          aria-label="Volume alto"
+          id="volume-icon"
+          viewBox="0 0 16 16"
+          data-encore-id="icon"
+          class="Svg-sc-ytk21e-0 gQUQL"
+          style="fill: rgb(199, 199, 199)"
+        >
+          <path
+            d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z"
+          ></path>
+          <path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z"></path>
+        </svg>
+        <input id="vol" type="range" class="range" id="volumeRange" />
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/artist-page.js"></script>
+  </body>
+</html>
